@@ -110,7 +110,40 @@
 
   > '상담한다' 연관 관계는 **양방향(bidirectional) 연관 관계다.** 두 클래스의 객체들이 서로의 존재를 인식한다는 의미이다.
 
+* **예제) 사람과 전화기의 관계**
 
+  <img src="../capture/스크린샷 2019-07-22 오후 8.32.03.png" width=500>
+
+  ```java
+  public class Person {
+    private Phone[] phones;
+    
+    public Person() {
+      phones = new Phone[2];
+    }
+  }
+  ```
+
+* **예제) 사람과 전화기의 관계2**
+
+  <img src="../capture/스크린샷 2019-07-22 오후 8.46.39.png" width=500>
+
+  ```java
+  public class Person {
+    private Phone homePhone;
+    private Phone officePhone;
+    
+    public void setHomePhone(Phone phone) {
+      this.homePhone = phone;
+    }
+    
+    public void setOfficePhone(Phone phone) {
+      ths.officePhone = phone;
+    }
+  }
+  ```
+
+  
 
 * **다중성(multiplicity)** 
 
@@ -127,3 +160,281 @@
 | 1, 2, 6     | 1 또는 2 또는 6        |
 | 1, 3..5     | 1 또는 3 또는 4 또는 5 |
 
+* **예제) 한 교수에 여러 학생이 연관되는 다중성의 예**
+
+<img src="../capture/스크린샷 2019-07-22 오후 6.16.07.png" witdh=300>
+
+
+
+* **단방향 연관 관계**
+
+: 한 클래스로만 방향성이 있는 연관 관계
+
+​	<img src="../capture/스크린샷 2019-07-22 오후 9.14.55" width=700>
+
+**Student 클래스**
+
+```java
+import java.util.Vector;
+
+public class Student {
+
+  private String name;
+  private Vector<Course> courses;
+
+  public Student(String name) {
+    this.name = name;
+    courses = new Vector<>();
+  }
+
+  public void registerCourse(Course course) {
+    courses.add(course);
+  }
+
+  public void dropCourse(Course course) {
+    if (courses.contains(course)) {
+      courses.remove(course);
+    }
+  }
+  
+  public Vector<Course> getCourses() {
+    return courses;
+  }
+
+}
+```
+
+**Course 클래스**
+
+```java
+package object_oriented_modeling;
+
+public class Course {
+
+  private String name;
+
+  public Course(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+}
+```
+
+
+
+* **다대다 연관 관계**
+
+: 다대다 연관 관계(양방향 연관 관계)는 서로의 존재를 안다는 의미이다. 그에 반해 단방향 연관 관계는 한 쪽은 알지만 다른 쪽은 상대방의 존재를 모른다는 의미이다.
+
+<img src="../capture/스크린샷 2019-07-22 오후 6.33.37.png" width=500>
+
+**Student 클래스**
+
+```java
+import java.util.Vector;
+
+public class Student {
+
+  private String name;
+  private Vector<Course> courses;
+
+  public Student(String name) {
+    this.name = name;
+    courses = new Vector<>();
+  }
+
+  public void registerCourse(Course course) {
+    courses.add(course);
+    course.addStudent(this);
+  }
+
+  public void dropCourse(Course course) {
+    if (courses.contains(course)) {
+      courses.remove(course);
+      course.removeStudent(this);
+    }
+  }
+
+  public Vector<Course> getCourses() {
+    return courses;
+  }
+
+}
+```
+
+**Course 클래스**
+
+```java
+import java.util.Vector;
+
+public class Course {
+
+  private String name;
+  private Vector<Student> students;
+
+  public Course(String name) {
+    this.name = name;
+    students = new Vector<>();
+  }
+
+  public void addStudent(Student transcipt) {
+    students.add(transcipt);
+  }
+
+  public void removeStudent(Student transcipt) {
+    students.remove(transcipt);
+  }
+
+  public Vector<Student> getStudents() {
+    return students;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+}
+```
+
+
+
+* **연관 클래스** 
+
+  : 연관 관계에 **추가할 속성이나 행위가 있을 때 사용한다.** 예를 들어, 학생 클래스와 과목 클래스가 있을 때 성적은 두 클래스가 존재해야만 의미 있는 정보가 되기 때문에, 성적 정보는 클래스의 속성이 아닌 '수강하다' 라는 연관 관계의 속성으로 다뤄야 한다. 이런 경우 연관 클래스를 사용하면 된다.
+
+  <img src="../capture/스크린샷 2019-07-22 오후 8.18.00.png" width=500>
+
+  * **연관 클래스를 일반 클래스로 변환한 예**
+
+  <img src="../capture/스크린샷 2019-07-22 오후 8.20.27" width=500>
+
+  **Student 클래스**
+
+  ```java
+  import java.util.Vector;
+  
+public class Student {
+  
+  private String name;
+    private Vector<Transcript> transcripts;
+
+    public Student(String name) {
+    this.name = name;
+      transcripts = new Vector<>();
+  }
+  
+  public void addTranscript(Transcript transcript) {
+      transcripts.add(transcript);
+    }
+  
+    public Vector<Transcript> getTranscripts() {
+      return transcripts;
+    }
+  
+    public String getName() {
+      return name;
+    }
+  
+  }
+  ```
+  
+  **Course 클래스**
+  
+  ```java
+  import java.util.Vector;
+  
+  public class Course {
+  
+    private String name;
+    private Vector<Transcript> transcripts;
+  
+    public Course(String name) {
+      this.name = name;
+      transcripts = new Vector<>();
+    }
+  
+    public void addTranscript(Transcript transcript) {
+      transcripts.add(transcript);
+    }
+  
+    public Vector<Transcript> getTranscripts() {
+      return transcripts;
+    }
+  
+    public String getName() {
+      return name;
+    }
+  
+  }
+  ```
+  
+  **Transcript 클래스**
+  
+  ```java
+  public class Transcript {
+  
+    private Student student;
+    private Course course;
+    private String date;
+    private String grade;
+  
+    public Transcript(Student student, Course course) {
+      this.student = student;
+      this.student.addTranscript(this);
+      this.course = course;
+      this.course.addTranscript(this);
+    }
+  
+    public Student getStudent() {
+      return student;
+    }
+  
+    public Course getCourse() {
+      return course;
+    }
+  
+    public void setDate(String date) {
+      this.date = date;
+    }
+  
+    public String getDate() {
+      return date;
+    }
+  
+  
+    public String getGrade() {
+      return grade;
+    }
+  
+    public void setGrade(String grade) {
+      this.grade = grade;
+    }
+    
+  }
+  ```
+  
+  > Student 클래스와 Transcipt 클래스의 연관 관계도 일대다 다중성을 갖으며 Course 클래스와 Transcipt 클래스 또한 그렇다.
+  
+  * **이력** : 어떤 연관 관계의 내용
+  
+    * **예시) 학생의 도서관 대출 이력**
+  
+      <img src="../capture/스크린샷 2019-07-22 오후 8.25.33.png" width=700>
+
+
+
+* **연관 관계는 때로는 재귀적(reflexive)일 수 있다.**
+
+  * **재귀적 연관 관계** : 동일한 클래스에 속한 객체들 사이의 관계이다.
+
+  * **예시) 직원과 관리자 역할**
+
+    <img src="../capture/스크린샷 2019-07-22 오후 10.10.38.png" width=500>
+
+    > 하지만 여기서 사원과 사원이 서로 관리를 하는 모순이 발생할 수 있다. 
+
+    
