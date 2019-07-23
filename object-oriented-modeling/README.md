@@ -310,7 +310,7 @@ public class Course {
 
   * **연관 클래스를 일반 클래스로 변환한 예**
 
-  <img src="../capture/스크린샷 2019-07-22 오후 8.20.27" width=500>
+  ![스크린샷 2019-07-23 오후 3.08.22](../capture/스크린샷 2019-07-23 오후 3.08.22.png)
 
   **Student 클래스**
 
@@ -435,6 +435,201 @@ public class Student {
 
     <img src="../capture/스크린샷 2019-07-22 오후 10.10.38.png" width=500>
 
-    > 하지만 여기서 사원과 사원이 서로 관리를 하는 모순이 발생할 수 있다. 
+    > 하지만 여기서 사원과 사원이 서로 관리를 하는 모순이 발생할 수 있다. 이러한 관계를 재귀적 연관 관계라 한다.
 
     
+
+    ​							 <img src="../capture/스크린샷 2019-07-23 오후 3.02.23.png" width=400>
+
+    > 이를 '관계의 루프'라고 하는데, 이런 상황을 배제하려면 연관 관계에 제약을 설정해야 한다.
+
+    
+
+    <img src="../capture/스크린샷 2019-07-23 오후 3.06.13.png" width=500>
+
+    > 제약은 '{ }' 안에 미리 정해진 제약뿐만 아니라 어떤 문장도 자유롭게 쓸 수 있으며 클래스나 연관 관계를 포함한 UML 모델 요소가 따라야 하는 규칙을 붙여줄 때 사용한다. 
+    >
+    > **'{계층}'** : 객체 사이에 상하 관계가 존재하고 사이클이 존재 하지 않는다는 의미다.
+
+
+
+### 일반화 관계
+
+한 클래스가 다른 클래스를 포함하는 상위 개념일 때 두 클래스 사이에는 일반화 관계가 존재한다.
+
+* **일반화 관계(상속 관계)** : 자식 클래스가 부모 클래스로부터 속성과 연산을 물려받는 관계이다.
+
+  * **ex) 가전 제품(부모) - 세탁기, TV, 식기세척기(자식) <= 일반화 관계**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 3.20.12.png" width=600>
+
+  * 이때 부모 클래스인 가전 제품 클래스는 구현되지 않은 메소드인 추상 메소드를 가지고 있다. 
+  * 이와 같이 추상 메소드를 하나 이상 가지는 클래스를 **추상 클래스** 라고 , UML에서는 추상 클래스와 메서드를 이탤릭체로 써서 구분하거나 스테레오 타입('<<', '>>' 기호 안에 원하는 이름을 넣음)으로 표시한다.
+    * **이탤릭체** : *이탤릭체*
+    * **스테레오 타입** : *<\<interface>>*
+
+
+
+* **예제) 일반화 관계**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.03.47.png" width=600>
+
+  * **HomeAppliancies 클래스**
+
+    ```java
+    package object_oriented_modeling;
+    
+    public abstract class HomeAppliancies {
+    
+      private int serialNo;         // 제조 번호
+      private String manufacturer;  // 제조 회사
+      private int year;             // 제조 년도
+    
+      public abstract void turnOn();
+      public abstract void turnOff();
+    
+    }
+    ```
+
+  * **Washer 클래스**
+
+    ```java
+    package object_oriented_modeling;
+    
+    public class Washer extends HomeAppliancies {
+    
+      @Override
+      public void turnOn() {
+        // ...
+      }
+    
+      @Override
+      public void turnOff() {
+        // ...
+      }
+    }
+    ```
+
+    > 나머지 Freezer, DishWasher 클래스도 비슷하게 구현하면 된다.
+
+
+
+### 집합 관계
+
+: UML 연관 관계의 특별 경우로 **전체와 부분의 관계를** 명확하게 명시하고자 할 때 사용한다. **집약(aggregation)과 합성(composition)** 두 종류의 집합 관계가 존재한다.
+
+* **집약 관계** : 한 객체가 다른 객체를 포함하는 것을 나타낸다.
+
+  * 전체 객체와 부분 객체의 생명 주기가 다르다.
+  * 부분 객체를 여러 전체 객체가 공유할 수 있다.
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.15.18.png" width=150>
+
+* **합성 관계** : 전체를 가리키는 클래스 방향에 채워진 마름모로 표시되며 부분 객체가 전체 객체에 속하는 관계다.
+
+  * 전체 객체가 없어지면 부분 객체도 없어진다.
+  * 부분 객체를 여러 전체 객체가 공유할 수 없다.
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.17.24.png" width=150>
+
+* **예제) 합성 관계**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.23.36.png" width=700>
+
+  ```java
+  public class Computer {
+    
+    private MainBoard mb;
+    private CPU c;
+    private Memory m;
+    private PowerSupply ps;
+    
+    public Computer() {
+      this.mb = new MainBoard();
+      this.c = new CPU();
+      this.m = new Memory();
+      this.ps = new PowerSupply();
+    }
+    
+  }
+  ```
+
+  > Computer 객체를 생성하면 MainBoard, CPU, Memory, PowerSupply 객체가 생성된다. 이러한 부품 객체들은 Computer 객체가 사라지면 같이 사라진다. 즉, **부품 객체들의 라이프타임이 Computer 객체의 라이프타임에 의존하는 관계가 형성된다.**
+
+
+
+* **예제) 집약 관계**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.26.31.png" width=700>
+
+  ```java
+  public class Computer {
+    
+    private MainBoard mb;
+    private CPU c;
+    private Memory m;
+    private PowerSupply ps;
+    
+    public Computer(MainBoard mb, CPU c, Memory m, PowerSupply ps) {
+      this.mb = mb;
+      this.c = c;
+      this.m = m;
+      this.ps = ps;
+    }
+    
+  }
+  ```
+
+  > 집약 관계는 합성 관계와 다르게 Computer 객체가 사라져도 부품 객체들은 삭제되지 않는다. 왜냐하면, 부품 객체들은 외부에서 **이들 객체에 대한 참조만 받아 사용했기 때문이다.**
+
+  
+
+* **연습 문제) 동아리와 학생의 관계에서 다음 사실을 모두 클래스 다이어그램으로 표현하라.**
+
+  1. 학생은 한 동아리에만 가입할 수 있다.
+  2. 한 동아리에는 여러 명의 학생들이 있다.
+  3. 동아리가 없어지면 동아리에서 활동했던 학생들의 정보도 없어진다.
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.31.36.png" width=500>
+
+
+
+### 의존 관계
+
+: 짧은 시간 동안 이용하는 관계이다.
+
+* **예시) 연관 관계와 의존 관계 (자동차, 사람, 주유)**
+
+  * 자동차(Car 클래스)를 소유한 사람(Person 클래스)이 있을 경우에, 그 사람은 오랜 기간동안 그 자동차를 이용할 것이다. 이런 경우 사람과 자동차의 **관계는 오랫동안 유지되므로 연관 관계이다.**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.40.22.png" width=500>
+
+  * 자동차에 주유할 때는 매번 똑같은 곳에서만 주유를 하지 않는다. 즉, 주유기가 매번 달라지므로 객체지향 프로그램에서는 사용되는 주유기를 인자나 지역 객체로 생성해 구현한다. 이러한 **짧은 시간 동안 유지되는 관계를 의존 관계라 한다.**
+
+    <img src="../capture/스크린샷 2019-07-23 오후 10.43.43.png" width=500>
+
+
+
+### 인터페이스와 실체화 관계
+
+* **인터페이스** : 책임(responsibility)이다. 
+  * 책임이란 **객체가 해야 하는 일로서** 해석할 수 있고 **객체가 할 수 있는 일로도** 해석할 수 있다. 
+  * 즉, 객체가 외부에 제공하는 서비스나 기능을 객체가 **수행하는 책임으로 본다.**
+  * 인터페이스 자체는 실제로 책임을 수행하는 객체가 아니다.
+  * 스테레오 타입인 '<< >>' 에 interface 라는 키워드를 넣고, 그 밑에 이탤릭체로 인터페이스 실체화 관계를 적는다.
+
+* **예시) 비행기와 새의 능력**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 10.53.10.png" width=400>
+
+  > 비행기와 새는 공통적으로 날 수 있는 능력이 있다. 이런 **공통 능력이라는 관점에서** 비행기와 새를 그룹화할 수 있는 메커니즘이 바로 **인터페이스다.**
+
+  **다른 방식의 표현**
+
+  <img src="../capture/스크린샷 2019-07-23 오후 11.06.37.png" width=500>
+
+  > 인터페이스를 작은 원으로 그린 후 클래스와 인터페이스를 실선으로 연결했다.
+
+  
+
+  
