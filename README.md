@@ -2,11 +2,11 @@
 
 객체 지향 디자인 패턴을 학습한 자료들을 업로드하는 저장소입니다.
 
-
+</br>
 
 # 목차
 
-1. 객체지향 모델링
+1. [객체지향 모델링](https://github.com/LeeSM0518/design-pattern/tree/master/object-oriented-modeling)
 2. 객체지향 원리
 3. SOLID 원칙
 4. 디자인 패턴
