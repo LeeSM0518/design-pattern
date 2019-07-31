@@ -7,7 +7,7 @@
 # 목차
 
 1. [객체지향 모델링](https://github.com/LeeSM0518/design-pattern/tree/master/src/object_oriented_modeling)
-2. 객체지향 원리
+2. [객체지향 원리](https://github.com/LeeSM0518/design-pattern/tree/master/src/object_oriented_principle)
 3. SOLID 원칙
 4. 디자인 패턴
 5. 스트래티지 패턴
