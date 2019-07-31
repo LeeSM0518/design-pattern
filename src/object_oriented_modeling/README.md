@@ -322,20 +322,18 @@ public class Course {
   ```java
   import java.util.Vector;
   
-public class Student {
+  public class Student {
   
-  private String name;
+    private String name;
     private Vector<Transcript> transcripts;
-
     public Student(String name) {
-    this.name = name;
+      this.name = name;
       transcripts = new Vector<>();
-  }
-  
-  public void addTranscript(Transcript transcript) {
-      transcripts.add(transcript);
     }
   
+    public void addTranscript(Transcript transcript) {
+      transcripts.add(transcript);
+    }
     public Vector<Transcript> getTranscripts() {
       return transcripts;
     }
@@ -343,7 +341,6 @@ public class Student {
     public String getName() {
       return name;
     }
-  
   }
   ```
   
@@ -377,7 +374,7 @@ public class Student {
   }
   ```
   
-  **Transcript 클래스**
+    **Transcript 클래스**
   
   ```java
   public class Transcript {
@@ -418,16 +415,18 @@ public class Student {
     public void setGrade(String grade) {
       this.grade = grade;
     }
-    
+  
   }
   ```
   
   > Student 클래스와 Transcipt 클래스의 연관 관계도 일대다 다중성을 갖으며 Course 클래스와 Transcipt 클래스 또한 그렇다.
-  
+
+
+
   * **이력** : 어떤 연관 관계의 내용
   
     * **예시) 학생의 도서관 대출 이력**
-  
+    
       <img src="../../capture/스크린샷 2019-07-22 오후 8.25.33.png" width=700>
 
 
