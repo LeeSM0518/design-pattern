@@ -12,7 +12,7 @@ public class TimeReminder {
 
     if (hour >= 22) {
       // TODO 문제 풀이중
-//      m.playSong();
+      m.playSong();
     }
   }
 }
