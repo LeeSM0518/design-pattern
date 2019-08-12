@@ -444,3 +444,83 @@
 
 
 * **예시) 애완동물**
+
+  **Pet 추상 클래스**
+
+  ```java
+  public abstract class Pet {
+    public abstract void talk();
+  }
+  ```
+
+  **Cat, Dog, Parrot 클래스**
+
+  ```java
+  public class Cat extends Pet {
+    @Override
+    public void talk() {
+      System.out.println("야옹");
+    }
+  }
+  
+  public class Dog extends Pet {
+    @Override
+    public void talk() {
+      System.out.println("멍멍");
+    }
+  }
+  
+  public class Parrot extends Pet {
+    @Override
+    public void talk() {
+      System.out.println("안녀엉");
+    }
+  }
+  ```
+
+  **Main 클래스**
+
+  ```java
+  class Main {
+  
+    public static void main(String[] args) {
+      Pet[] pets = new Pet[]{
+          new Dog(),
+          new Cat(),
+          new Parrot()
+      };
+  
+      for (Pet pet : pets) {
+        pet.talk();
+      }
+    }
+    
+  }
+  ```
+
+  > Pet 클래스에 talk 메소드를 정의하고 Cat, Dog, Parrot 클래스에서 여러 가지 울음 방식에 맞게 재정의한다. 위의 메인 클래스를 보면 pets에 Dog, Cat, Parrot 객체들이 배열 요소들로 저장되고 for문을 실행시키면 Pet 타입의 pet이 각 요소들을 참조하여 각각에 정의된 talk 메서드가 실행된다. 이를 **다형성** 이라 한다.
+
+
+
+# 2.5. 피터 코드의 상속 규칙
+
+**피터 코드(Peter Coad)는** 상속의 오용을 막기 위해 상속의 사용을 엄격하게 제한하는 규칙들을 만들었다.
+
+* **5가치 규칙 중에 어느 하나라도 만족하지 않는다면 상속을 사용해서는 안된다.**
+  1. 자식 클래스와 부모 클래스 사이는 '역할 수행(is role played by)' 관계가 아니어야 한다.
+  2. 한 클래스의 인스턴스는 다른 서브 클래스의 객체로 변환할 필요가 절대 없어야 한다.
+  3. 자식 클래스가 부모 클래스의 책임을 무시하거나 재정의하지 않고 확장만 수행해야 한다.
+  4. 자식 클래스가 단지 일부 기능을 재사용할 목적으로 유틸리티 역학을 수행하는 클래스를 상속하지 않아야 한다.
+  5. 자식 클래스가 '역할(role)', '트랜잭션(transaction)', '디바이스(device)' 등을 특수화(specialization)해야 한다.
+
+
+
+* **예시) 사람과 운전자, 회사원의 관계**
+
+  <img src="../../capture/스크린샷 2019-07-31 오후 1.04.14.png" width=400>
+
+  1. '운전자'나 '회사원'은 어떤 순간에 '사람'이 수행하는 **역할의 하나다.** 그러므로 사람과 운전자, 회사원은 상속 관계로 표현되어서는 안 되므로 규칙에 위배된다.
+  2. '운전자'는 어떤 시점에서 '회사원'이 될 필요가 있으며 '회사원' 역시 '운전자'가 될 필요가 있다. 이런 경우 **객체의 변환 작입이 필요하므로** 규칙에 위배된다.
+  3. 아직 클래스 정의되어 있지 않기 때문에, 점검할 수 없다.
+  4. **기능만 재사용할 목적으로** 상속 관계를 표현하지는 않았으므로 규칙을 준수한다.
+  5. 아직 클래스가 정의되어 있지 않기 때문에, 점검할 수 없다.
