@@ -10,7 +10,7 @@
 2. [객체지향 원리](https://github.com/LeeSM0518/design-pattern/tree/master/src/object_oriented_principle)
 3. [SOLID 원칙](https://github.com/LeeSM0518/design-pattern/tree/master/src/solid_rule)
 4. [디자인 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/design_pattern)
-5. 스트래티지 패턴
+5. [스트래티지 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/strategy_pattern)
 6. 싱글턴 패턴
 7. 스테이트 패턴
 8. 커맨드 패턴
