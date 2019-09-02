@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="31cb4dba-024a-46c2-a83c-ca66f115daad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/design-pattern/META-INF/design-pattern.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/design-pattern/solid_rule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design-pattern/solid_rule/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/design-pattern/solid_rule/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/design-pattern/strategy_pattern/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design-pattern/strategy_pattern/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solid_rule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/solid_rule/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategy_pattern/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy_pattern/README.md" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,138 +17,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Robot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-              <folding>
-                <element signature="e#114#115#0" expanded="true" />
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#171#172#0" expanded="true" />
-                <element signature="e#192#193#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#372#373#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
-                <element signature="e#498#499#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/MovingStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="2" selection-end-line="6" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/AttackStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/FlyingStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#118#119#0" expanded="true" />
-                <element signature="e#148#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/WalkingStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#118#119#0" expanded="true" />
-                <element signature="e#148#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/MissileStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#122#123#0" expanded="true" />
-                <element signature="e#152#153#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/PunchStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#117#118#0" expanded="true" />
-                <element signature="e#147#148#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/TaekwonV.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#97#98#0" expanded="true" />
-                <element signature="e#118#119#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Atom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#89#90#0" expanded="true" />
-                <element signature="e#110#111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -159,91 +29,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/transcipt.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Student.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Main.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Transcript.java" />
-        <option value="$PROJECT_DIR$/src/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/test/Test1.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Course.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Test.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/HomeAppliancies.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_modeling/Washer.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/StackClient.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/ArrayStack.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/MyStack.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/VectorStack.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/Cat.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/Dog.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/Parrot.java" />
-        <option value="$PROJECT_DIR$/src/object_oriented_principle/Pet.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/TimeReminder.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/TimeProvider.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/FakeTimeProvider.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/TimeReminder2.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/MP3.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Bag.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/DiscountedBag.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Kid.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Robot.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Lego.java" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Main.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_1.snippet" />
-        <option value="$PROJECT_DIR$/src/solid_rule/Test.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/MovingStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/AttackStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/Robot.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/Atom.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/TaekwonV.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/FlyingStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/WalkingStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/MissileStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/PunchStrategy.java" />
-        <option value="$PROJECT_DIR$/src/strategy_pattern/Client.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1280" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="1417" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design-pattern" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design-pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design-pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="strategy_pattern" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1QG51lEmt4dwnDuCr3ePGhSIYn5" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -265,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="strategy_pattern.Client" />
       <module name="design-pattern" />
@@ -292,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="object_oriented_principle.StackClient" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="singleton_pattern.Main" />
       <module name="design-pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="object_oriented_principle.*" />
+          <option name="PATTERN" value="singleton_pattern.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -333,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.TimeReminder2" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.StackClient" />
       </list>
     </recent_temporary>
   </component>
@@ -362,441 +154,22 @@
       <workItem from="1565180194826" duration="371000" />
       <workItem from="1565613890964" duration="1339000" />
       <workItem from="1565784573500" duration="4110000" />
+      <workItem from="1567383881059" duration="3023000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30203000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1280" height="1417" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18671875" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297491" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32845646" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32987013" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Key Promoter X" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="26" column="1" lean-forward="true" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Transcript.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Test1.java" />
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding>
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/HomeAppliancies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_modeling/Washer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/StackClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="61" lean-forward="true" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/ArrayStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/VectorStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/Cat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#134#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/Dog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#134#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/MyStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/Parrot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="2" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#103#104#0" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/object_oriented_principle/Pet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/TimeReminder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/TimeProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="23" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/FakeTimeProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="11" lean-forward="true" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/MP3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding>
-            <element signature="e#66#67#0" expanded="true" />
-            <element signature="e#96#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/TimeReminder2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Bag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="17" selection-end-line="15" />
-          <folding>
-            <element signature="e#101#102#0" expanded="true" />
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/DiscountedBag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Toy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Robot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="19" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Kid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="39" lean-forward="true" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Lego.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="18" selection-end-line="9" />
-          <folding>
-            <element signature="e#82#83#0" expanded="true" />
-            <element signature="e#100#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_1.snippet">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="163" column="11" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-          <folding>
-            <element signature="e#7387#7388#0" expanded="true" />
-            <element signature="e#7435#7436#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/solid_rule/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/design_pattern/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="228">
-            <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/WalkingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#148#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Atom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#89#90#0" expanded="true" />
-            <element signature="e#110#111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/TaekwonV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="2" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#97#98#0" expanded="true" />
-            <element signature="e#118#119#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/MovingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="2" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/FlyingStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#148#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/AttackStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/MissileStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#122#123#0" expanded="true" />
-            <element signature="e#152#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/PunchStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Robot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <element signature="e#114#115#0" expanded="true" />
-            <element signature="e#139#140#0" expanded="true" />
-            <element signature="e#171#172#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/strategy_pattern/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

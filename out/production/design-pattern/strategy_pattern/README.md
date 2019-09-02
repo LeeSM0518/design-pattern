@@ -1,4 +1,4 @@
-# Strategy pattern
+# 5. Strategy pattern
 
 전략 패턴
 
@@ -235,7 +235,128 @@ public class Atom extends Robot {
   
   }
   
-  //
+  // 아톰 클래스
+  public class Atom extends Robot {
+  
+    public Atom(String name) {
+      super(name);
+    }
+  
+  }
+  
+  // 태권브이 클래스
+  public class TaekwonV extends Robot {
+  
+    public TaekwonV(String name) {
+      super(name);
+    }
+  
+  }
+  
+  public interface MovingStrategy {
+  
+    public void movie();
+  
+  }
+  
+  public class FlyingStrategy implements MovingStrategy {
+  
+    @Override
+    public void movie() {
+      System.out.println("I can fly");
+    }
+  
+  }
+  
+  public interface AttackStrategy {
+  
+    public void attack();
+  
+  }
+  
+  public class MissileStrategy implements AttackStrategy {
+  
+    @Override
+    public void attack() {
+      System.out.println("I have Missile and can attack with it");
+    }
+  
+  }
+  
+  public class PunchStrategy implements AttackStrategy {
+  
+    @Override
+    public void attack() {
+      System.out.println("I have strong punch and can attack with it");
+    }
+  
+  }
+  
+  public class Client {
+  
+    public static void main(String[] args) {
+      Robot taekwonV = new TaekwonV("TaekwonV ");
+      Robot atom = new Atom("Atom");
+  
+      taekwonV.setMovingStrategy(new WalkingStrategy());
+      taekwonV.setAttackStrategy(new MissileStrategy());
+  
+      atom.setMovingStrategy(new FlyingStrategy());
+      atom.setAttackStrategy(new PunchStrategy());
+  
+      System.out.println("My name is " + taekwonV.getName());
+      taekwonV.move();
+      taekwonV.attack();
+  
+      System.out.println();
+  
+      System.out.println("My name is " + atom.getName());
+      atom.move();
+      atom.attack();
+    }
+  
+  }
   ```
 
+* **실행결과**
+
+  ```
+  My name is TaekwonV 
+  I can only walk
+  I have Missile and can attack with it
   
+  My name is Atom
+  I can fly
+  I have strong punch and can attack with it
+  ```
+
+</br>
+
+# 5.4. 스트래티지 패턴
+
+**스트래티지 패턴(Strategy Pattern)** : 전략을 쉽게 바꿀 수 있도록 해주는 디자인 패턴이다.
+
+* **전략** : 어떤 목적을 달성하기 위해 일을 수행하는 방식. 비즈니스 규칙, 문제를 해결하는 알고리즘 등으로 이해할 수 있다.
+
+</br>
+
+**스트래티지 패턴 컬레보레이션**
+
+<img src="../../capture/스크린샷 2019-08-14 오후 10.53.11.png">
+
+* **Strategy** : 인터페이스나 추상 클래스로 외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시한다.
+* **ConcreteStrategy1, ConcreteStrategy2** : 스트래티지 패턴에서 명시한 알고리즘을 실제로 구현한 클래스다.
+* **Context** : 스트래티지 패턴을 이용하는 역할을 수행한다. 필요에 따라 동적으로 구체적인 전략을 바꿀 수 있도록 setter 메서드를 제공한다.
+
+</br>
+
+**스트래티지 패턴의 순차 다이어그램**
+
+<img src="https://mblogthumb-phinf.pstatic.net/MjAxNzEwMTdfMjI3/MDAxNTA4MjQyMTAzMjEz.Hp_5a2J4qz2o4_BPVb2JItHFLS_fapQ3-NzVco3Lsj8g.z3r7QblrXg6ZRweRaBA0VPEhHcefXJeHILYO6Ry5qKog.PNG.1ilsang/image.png?type=w800">
+
+* 클라이언트가 원하는 스트래티지 객체를 생성하고 이를 Context 객체에 바인딩하면 Context 객체는 바인딩된 스트래티지 객체의 타입에 따라 적절한 행위를 실행한다.
+
+</br>
+
+<img src="https://mblogthumb-phinf.pstatic.net/MjAxNzEwMTdfMjQy/MDAxNTA4MjQyMTcyNjE2.ijQaf2MYk79bmt_qF5VzKMJCuuuOKoB_iDAZVOMYLNEg.Odr0Y4-iTRM1D8Usj0GoU-Z8wytd8woAgad8C5vtRzgg.PNG.1ilsang/image.png?type=w800">
+
