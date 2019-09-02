@@ -1,4 +1,4 @@
-# SOLID 원칙
+# 3. SOLID 원칙
 
 * **SRP(Single Responsibility Principle)** : 소프트웨어 설계 첫 번째 원칙으로 단일 책임 원칙이다. 간단하게 단 하나의 책임만을 가져야 한다는 의미이다.
 * **개방-폐쇄 원칙(Open-Closed Principle, OCP)** : 기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다는 뜻이다.

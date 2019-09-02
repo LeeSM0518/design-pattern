@@ -1,4 +1,4 @@
-# Strategy pattern
+# 5. Strategy pattern
 
 전략 패턴
 
