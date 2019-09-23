@@ -700,3 +700,20 @@ Sum: 150 Average: 30.0
 옵서버 패턴(Observer Pattern)은 데이터의 변경이 발생했을 경우 상대 클래스나 객체에 의존하지 않으면서 데이터 변경을 통보하고자 할 때 유용하다. 
 
 <br>
+
+### *옵서버 패턴의 컬레보레이션*
+
+<img src="../../capture/스크린샷 2019-09-23 오후 3.38.12.png">
+
+* **Observer** : <u>데이터의 변경을 통보 받는 인터페이스.</u> 즉, Subject에서는 Observer 인터페이스의 update 메서드를 호출함으로써 ConcreteSubject의 데이터 변경을 ConcreteObserver에게 통보한다.
+* **Subject** : <u>ConcreteObserver 객체를 관리하는 요소.</u> Observer 인터페이스를 참조해서 ConcreteObserver를 관리하므로 ConcreteObserver의 변화에 독립적이다.
+* **ConcreteSubject** : <u>변경 관리 대상이 되는 데이터가 있는 클래스.</u> 데이터 변경을 위한 메서드인 setState가 있으며 setState에서는 자신의 데이터인 subjectState를 변경하고 Subject의 notifyObserver 메서드를 호출해서 ConcreteObserver 객체에 변경을 통보한다.
+* **ConcreteObserver** : <u>ConcreteSubject의 변경을 통보받는 클래스.</u> Observer 인터페이스의 update 메서드를 구현함으로써 변경을 통보받는다. 변경된 데이터는 ConcreteSubject의 getState 메서드를 호출함으로써 변경을 조회한다.
+
+<br>
+
+### *옵서버 패턴의 순차 다이어그램*
+
+<img src="../../capture/스크린샷 2019-09-23 오후 2.59.24.png">
+
+g
