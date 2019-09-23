@@ -14,7 +14,7 @@
 6. [싱글턴 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/singleton_pattern)
 7. [스테이트 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/state_pattern)
 8. [커맨드 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/command_pattern)
-9. 옵서버 패턴
+9. [옵서버 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/observer_pattern)
 10. 데커레이터 패턴
 11. 템플릿 메서드 패턴
 12. 팩토리 메서드 패턴
