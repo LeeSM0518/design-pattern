@@ -6,14 +6,14 @@ public class Client {
     ScoreRecord scoreRecord = new ScoreRecord();
 
     DataSheetView dataSheetView3 = new DataSheetView(scoreRecord, 3);
-    DataSheetView dataSheetView5 = new DataSheetView(scoreRecord, 5);
-    MinMaxView minMaxView = new MinMaxView(scoreRecord);
-    StatisticsView statisticsView = new StatisticsView(scoreRecord);
+//    DataSheetView dataSheetView5 = new DataSheetView(scoreRecord, 5);
+//    MinMaxView minMaxView = new MinMaxView(scoreRecord);
+//    StatisticsView statisticsView = new StatisticsView(scoreRecord);
 
     scoreRecord.attach(dataSheetView3);
-    scoreRecord.attach(dataSheetView5);
-    scoreRecord.attach(minMaxView);
-    scoreRecord.attach(statisticsView);
+//    scoreRecord.attach(dataSheetView5);
+//    scoreRecord.attach(minMaxView);
+//    scoreRecord.attach(statisticsView);
 
     for (int index = 1; index <= 5; index++) {
       int score = index * 10;

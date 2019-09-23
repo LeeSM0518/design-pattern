@@ -7,6 +7,9 @@
 * **구현 사항**
   * 입력된 점수를 저장하는 ScoreRecord 클래스
   * 점수를 목록의 형태로 출력하는 DataSheetView 클래스
+* **구현 결과**
+
+<img src="../../capture/스크린샷 2019-09-23 오후 4.43.33.png">
 
 <br>
 
@@ -34,7 +37,7 @@
 ```java
 public class ScoreRecord {
 
-  private List<Integer> scores = new ArrayList<>();		// 점수를 저장할 리스트
+  private List<Integer> scores = new ArrayList<>();  // 점수를 저장할 리스트
   private DataSheetView dataSheetView;	// 목록 형태로 점수를 출력하는 클래스
 
   public void setDataSheetView(DataSheetView dataSheetView) {
@@ -42,8 +45,8 @@ public class ScoreRecord {
   }
 
   public void addScore(int score) {		// 새로운 점수를 추가할 메서드
-    scores.add(score);								// scores 목록에 점수를 추가
-    dataSheetView.update();						// scores가 변경됨을 통보
+    scores.add(score);                // scores 목록에 점수를 추가
+    dataSheetView.update();           // scores가 변경됨을 통보
   }
 
   public List<Integer> getScoreRecord() {
@@ -110,6 +113,27 @@ public class Client {
   }
 
 }
+```
+
+<br>
+
+**실행 결과**
+
+```
+Adding 10
+List of 3 entries: 10 
+
+Adding 20
+List of 3 entries: 10 20 
+
+Adding 30
+List of 3 entries: 10 20 30 
+
+Adding 40
+List of 3 entries: 10 20 30 
+
+Adding 50
+List of 3 entries: 10 20 30
 ```
 
 <br>
@@ -208,6 +232,27 @@ public class Client {
 
 <br>
 
+**실행 결과**
+
+```
+Adding 10
+Min: 10 Max: 10
+
+Adding 20
+Min: 10 Max: 20
+
+Adding 30
+Min: 10 Max: 30
+
+Adding 40
+Min: 10 Max: 40
+
+Adding 50
+Min: 10 Max: 50
+```
+
+<br>
+
 ### *변경 사항*
 
 점수가 입력되었을 때 **지정된 특정 대상 클래스(처음에는 DataSheetView 클래스)** 에게 고정적으로 통보하도록 코딩이 되었는데 **다른 대상 클래스(MinMaxView 클래스)** 에게 점수가 입력되었음을 통보하려면 **ScoreRecord 클래스의 변경이 불가피하다.** 즉, OCP에 위배 된다.
@@ -275,10 +320,8 @@ public class ScoreRecord {
 
   public void addScore(int score) {
     scores.add(score);
-    minMaxView.update();
     for (DataSheetView dataSheetView : dataSheetViews)
       dataSheetView.update();	// 각 DataSheetView에 값의 변경을 통보
-
     minMaxView.update();			// MinMaxView에 값의 변경을 통보
   }
 
@@ -368,7 +411,7 @@ public class Client {
 
     scoreRecord.addDataSheetView(dataSheetView3);	// 3개 목록 DataSheetView 설정
     scoreRecord.addDataSheetView(dataSheetView5);	// 5개 목록 DataSheetView 설정
-    scoreRecord.setMinMaxView(minMaxView);				// MinMaxView 설정
+    scoreRecord.setMinMaxView(minMaxView);        // MinMaxView 설정
 
     for (int index = 1; index <= 5; index++) {
       int score = index * 10;
@@ -384,6 +427,37 @@ public class Client {
 
 <br>
 
+**실행 결과**
+
+```
+Adding 10
+List of 3 entries: 10 
+List of 5 entries: 10 
+Min: 10 Max: 10
+
+Adding 20
+List of 3 entries: 10 20 
+List of 5 entries: 10 20 
+Min: 10 Max: 20
+
+Adding 30
+List of 3 entries: 10 20 30 
+List of 5 entries: 10 20 30 
+Min: 10 Max: 30
+
+Adding 40
+List of 3 entries: 10 20 30 
+List of 5 entries: 10 20 30 40 
+Min: 10 Max: 40
+
+Adding 50
+List of 3 entries: 10 20 30 
+List of 5 entries: 10 20 30 40 50 
+Min: 10 Max: 50
+```
+
+<br>
+
 ### *변경 사항*
 
 성적의 통보 대상이 변경된 것을 반영하려고 ScoreRecord 클래스의 코드를 수정하게 되었다. 이런 상황은 **성적 변경을 새로운 클래스에 통보할 때마다 반복적으로 발생하게 될 것이다.** 예를 들어 평균/표준편차를 출력하는 StatisticsView 클래스에게 성적 변경을 통보하려면 ScoreRecord는 다시 변경되어야 한다.
@@ -392,7 +466,43 @@ public class Client {
 
 # 9.3. 해결책
 
-문제 해결의 핵심은 **성적 통보 대상이 변경되더라도 ScoreRecord 클래스를 그대로 재사용할 수 있어야 한다는 점이다.** 따라서 ScoreRecord 클래스에서 변화되는 부분을 식별하고 이를 일반화시켜야 한다.
+문제 해결의 핵심은 **성적 통보 대상(DataSheetView, MinMaxView)이 변경되더라도 ScoreRecord 클래스를 그대로 재사용할 수 있어야 한다는 점이다.** 따라서 ScoreRecord 클래스에서 변화되는 부분을 식별하고 이를 일반화시켜야 한다.
+
+<br>
+
+- **ScoreRecord의 변화되던 부분**
+
+  ```java
+  public class ScoreRecord {
+  
+    private List<Integer> scores = new ArrayList<>();
+    private MinMaxView minMaxView;
+  //  private DataSheetView dataSheetView;
+  
+    public void setMinMaxView(MinMaxView minMaxView) {
+      this.minMaxView = minMaxView;
+    }
+  
+  //  public void setDataSheetView(DataSheetView dataSheetView) {
+  //    this.dataSheetView = dataSheetView;
+  //  }
+  
+    public void addScore(int score) {
+      scores.add(score);
+      minMaxView.update();
+  //    dataSheetView.update();
+    }
+  
+    public List<Integer> getScoreRecord() {
+      return scores;
+    }
+  
+  }
+  ```
+
+  * 통보 대상이 필드값으로 존재하기 때문에 지속적으로 바뀐다.
+  * 통보 대상에 대한 setter 메소드가 지속적으로 바뀐다.
+  * 변경 통보에 대한 메소드가 지속적으로 바뀐다.
 
 <br>
 
@@ -402,7 +512,7 @@ DataSheetView와 MinMaxView 클래스에게 성적 변경을 통보할 수 있�
 
 <img src="../../capture/스크린샷 2019-09-22 오후 7.16.58.png">
 
-* 원래 ScoreRecord에서 성적 추가 및 변경 통보를  모두 하였으나, **변경 통보를 Subject라는 클래스에서 구현해놓고 관리 하도록 변경하였다.** Subject 클래스는 attach 메서드와 detach 메소드로 성적 변경에 관심이 있는 대상 객체를 추가하거나 제거한다. 
+* 원래 ScoreRecord에서 성적 추가 및 변경 통보를  모두 하였으나, **변경 통보를 Subject라는 클래스에서 구현해놓고 통보 대상들을 관리 하도록 변경하였다.** Subject 클래스는 attach 메서드와 detach 메소드로 성적 변경에 관심이 있는 대상 객체를 추가하거나 제거한다. 
 * 성적 변경의 통보 수신이라는 측면에서 DataSheetView 클래스와 MinMaxView 클래스는 동일하므로 **Observer 인터페이스를 DataSheetView, MinMaxView 클래스가 구현하여 일반화를 하고, Subject 클래스가 Observer를 사용하여 성적 변경을 통보하는 연관 관계로 변경하였다.**
 
 <br>
@@ -412,7 +522,7 @@ DataSheetView와 MinMaxView 클래스에게 성적 변경을 통보할 수 있�
 **Observer.java**
 
 ```java
-public interface Observer {				// 추상화된 통보 대상
+public interface Observer {       // 추상화된 통보 대상
 
   public abstract void update();	// 데이터의 변경을 통보했을 때 처리하는 메서드
 
@@ -424,7 +534,7 @@ public interface Observer {				// 추상화된 통보 대상
 **Subject.java**
 
 ```java
-public abstract class Subject {		// 추상화된 변경을 추가, 제거 및 통보하는 클래스
+public abstract class Subject {		// 추상화된 통보 대상을 추가, 제거 및 변경 사항을 통보하는 클래스
 
   // 추상화된 통보 대상 리스트
   private List<Observer> observers = new ArrayList<>();
@@ -449,7 +559,7 @@ public abstract class Subject {		// 추상화된 변경을 추가, 제거 및 �
 }
 ```
 
-* 이처럼 성적 변경에 관심이 있는 대상 객체들의 관리를 Subject 클래스에서 구현하고 ScoreRecord가 상속받게 함으로써, **ScoreRecord 클래스는 이제 DataSheetView와 MinMaxView를 직접 참조할 필요가 없게 되었다.**
+* 이처럼 성적 변경에 관심이 있는 대상 객체들의 관리를 Subject 클래스에서 구현하고 ScoreRecord가 상속받게 함으로써, **ScoreRecord 클래스는 이제 DataSheetView와 MinMaxView를 직접 참조할 필요가 없게 되었다.** 그러므로 통보 대상에 변경이 일어나도 ScoreRecord 클래스에는 영향이 없다.
 
 <br>
 
@@ -703,7 +813,7 @@ Sum: 150 Average: 30.0
 
 ### *옵서버 패턴의 컬레보레이션*
 
-<img src="../../capture/스크린샷 2019-09-23 오후 3.38.12.png">
+<img src="../../capture/스크린샷 2019-09-23 오후 6.03.22.png">
 
 * **Observer** : <u>데이터의 변경을 통보 받는 인터페이스.</u> 즉, Subject에서는 Observer 인터페이스의 update 메서드를 호출함으로써 ConcreteSubject의 데이터 변경을 ConcreteObserver에게 통보한다.
 * **Subject** : <u>ConcreteObserver 객체를 관리하는 요소.</u> Observer 인터페이스를 참조해서 ConcreteObserver를 관리하므로 ConcreteObserver의 변화에 독립적이다.
