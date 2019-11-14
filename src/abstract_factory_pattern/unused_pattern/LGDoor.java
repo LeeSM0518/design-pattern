@@ -1,4 +1,4 @@
-package abstract_factory_pattern;
+package abstract_factory_pattern.unused_pattern;
 
 public class LGDoor extends Door{
 

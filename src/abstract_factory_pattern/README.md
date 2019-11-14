@@ -214,6 +214,8 @@
   }
   ```
 
+  * 팩토리 메서드 패턴을 적용해 주어진 제조 업체에 따라 LGMotor와 HyundaiMotor 중에서 해당 Motor 클래스를 생성하는 MotorFacotry 클래스
+
 * **DoorFactory**
 
   ```java
@@ -237,4 +239,210 @@
   }
   ```
 
+  * 팩토리 메서드 패턴을 적용해 주어진 제조 업체에 따라 LGDoor와 HyundaiDoor 중에서 해당 Door 클래스를 생성하는 DoorFacotry 클래스
+
+* **Client**
+
+  ```java
+  public class Client {
   
+    public static void main(String[] args) {
+      Door lgDoor = DoorFactory.createDoor(VendorID.LG);
+      Motor lgMotor = MotorFactory.createMotor(VendorID.LG);
+      lgMotor.setDoor(lgDoor);
+  
+      lgDoor.open();
+      lgMotor.move(Direction.UP);
+    }
+  
+  }
+  ```
+
+* **실행 결과**
+
+  ```
+  open LG Door
+  close LG Door
+  run LG motor
+  ```
+
+<br>
+
+# 13.2. 문제점
+
+* 만약 다른 제조 업체의 부품을 사용해야 한다면?
+* 만약 새로운 제조 업체의 부품을 지원해야 한다면?
+
+<br>
+
+## 13.2.1. 다른 제조 업체의 부품을 사용해야 하는 경우
+
+이전의 코드와 같은 구조가 아니라 만약 엘리베이터가 모터와 문은 물론이고 세 종류의 램프, 두 종류의 센서, 스피커, 두 종류의 버튼 등 총 10개의 부품을 사용해야 한다면 **각 Factory 클래스를 구현하고 이들의 Factory 객체를 각각 생성해야 한다.**
+
+* **10개의 붚품을 현대 부품으로 사용하도록 수정한 Client 클래스**
+
+  ```java
+  public class Client {
+    public static void main(String[] args) {
+      Door hyundaiDoor = DoorFactory.createDoor(VendorID.HYUNDAI);
+      Motor hyundaiMotor = MotorFactory.createMotor(VendorID.HYUNDAI);
+      hyndaiMotor.setDoor(hyundaiDoor);
+      ArrivalSensor hyundaiArrivalSensor =
+        ArrivalSensorFactory.createArrivalSensor(VendorID.HYUNDAI);
+  		WeightSensor hyundaiWeightSensor =
+        WeightSensorFactory.createWeightSensor(VendorID.HYUNDAI);
+      ... // 나머지 6개의 부품들을 적용하는 코드
+      hyundaiDoor.open();
+      hyndaiMotor.move(Direction.UP);
+    }
+  }
+  ```
+
+  * 부품의 수가 많아지면 특정 업체별 부품을 생성하는 코드의 길이가 길어지고 복잡해진다.
+
+<br>
+
+## 13.2.2. 새로운 제조 업체의 부품을 지원해야 하는 경우
+
+삼성의 엘리베이터 부품을 지원해야 한다면 SamsungMotor와 SamsungDoor 클래스를 MotorFactory와 DoorFactory 클래스에서 지원이 되어야 한다.
+
+* **DoorFactory**
+
+  ```java
+  public class DoorFactory {
+  
+    public static Door createDoor(VendorID vendorID) {
+      Door door = null;
+      switch (vendorID) {
+        case LG:
+          door = new LGDoor();
+          break;
+        case HYUNDAI:
+          door = new HyundaiDoor();
+          break;
+        case SAMSUNG:
+          door = new SamgsungDoor();
+          break;
+      }
+      return door;
+    }
+  
+  }
+  ```
+
+  * 하지만 DoorFactory 뿐만 아니라 부품이 10가지 이상이면 부품과 연관된 모든 Factory 클래스에서도 마찬가지로 삼성의 부품을 생성하도록 변경할 필요가 있다. 즉, **여러 개의 클래스의 수정이 필요하기 때문에** 잘못된 설계이다.
+
+<br>
+
+결론적으로 지금까지 언급한 문제점을 요약하면 기존의 팩토리 메서드 패턴을 이용한 객체 생성은 **관련 있는 여러 개의 객체를 일관성 있는 방식으로 생성하는 경우에 많은 코드 변경이 발생하게 된다.** 
+
+<br>
+
+# 13.3. 해결책
+
+여러 종류의 객체를 생성할 때 객체들 사이의 관련성이 있는 경우라면 각 종류별로 별도의 Factory 클래스를 사용하는 대신 관련 **객체들을 일관성 있게 생성하는 Factory 클래스를 사용하는 것이 편리할 수가 있다.**
+
+예를 들어 MotorFactory, DoorFactory 클래스와 같이 부품별로 Factory 클래스를 만드는 대신 LGElevatorFactory나 HyundaiElevatorFactory 클래스와 같이 **제조 업체별로 Factory 클래스를 만들 수도 있다.**
+
+<br>
+
+### *LGElavtorFactory와 HyundaiElevatorFactory 클래스를 이용한 설계*
+
+<img src="../../capture/스크린샷 2019-11-14 오후 9.13.21.png">
+
+* LGElevatorFactory 와 HyundaiElevatorFactory 클래스는 createMotor 메서드와 createDoor 메서드를 통해 각 제조사에 맞는 Motor와 Door 객체를 생성한다.
+* 즉, 2개의 ElevatorFactory 클래스는 모두 똑같은 createMotor 와 createDoor 메서드를 제공하기 때문에 **두 팩토리 클래스를 일반화한 상위 클래스를 정의할 수 있다.**
+
+<br>
+
+### *LGElevatorFactory와 HyundaiEleavtorFactory 클래스의 일반화*
+
+<img src="../../capture/스크린샷 2019-11-14 오후 9.32.47.png" width=500>
+
+* ElevatorFactory는 **추상 클래스고** createMotor와 createDoor도 **추상 메서드로** 정의된다.
+
+<br>
+
+### *코드*
+
+* **ElevatorFactory**
+
+  ```java
+  public abstract class ElevatorFactory {
+  
+    public abstract Motor createMotor();
+    public abstract Door createDoor();
+  
+  }
+  ```
+
+* **HyundaiElevatorFactory**
+
+  ```java
+  public class HyundaiElevatorFactory extends ElevatorFactory {
+  
+    @Override
+    public Motor createMotor() {
+      return new HyundaiMotor();
+    }
+  
+    @Override
+    public Door createDoor() {
+      return new HyundaiDoor();
+    }
+  
+  }
+  ```
+
+* **LGElevatorFactory**
+
+  ```java
+  public class LGElevatorFactory extends ElevatorFactory {
+  
+    @Override
+    public Motor createMotor() {
+      return new LGMotor();
+    }
+  
+    @Override
+    public Door createDoor() {
+      return new LGDoor();
+    }
+  
+  }
+  ```
+
+* **Client**
+
+  ```java
+  public class Client {
+  
+    public static void main(String[] args) {
+      ElevatorFactory factory = new HyundaiElevatorFactory();
+      Door door = factory.createDoor();
+      Motor motor = factory.createMotor();
+      motor.setDoor(door);
+  
+      door.open();
+      motor.move(Direction.UP);
+    }
+  
+  }
+  ```
+
+  * 제조 업체별로 Factory 클래스를 정의했으므로 제조 업체별 부품 객체를 아주 간단히 생성할 수 있다.
+
+* **실행 결과**
+
+  ```
+  open Hyundai Door
+  close Hyundai Door
+  run Hyundai motor
+  ```
+
+<br>
+
+### *새로운*
+
+새로운 제조 업체의 부품을 지원하는 경우 이저에는 삼성 부품의 객체를 생성하도록 부품별 Factory 클래스를 수정해줘야 했지만, 
+
