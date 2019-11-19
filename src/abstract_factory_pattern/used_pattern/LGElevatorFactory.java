@@ -7,6 +7,16 @@ import abstract_factory_pattern.unused_pattern.Motor;
 
 public class LGElevatorFactory extends ElevatorFactory {
 
+  private static ElevatorFactory factory;
+  private LGElevatorFactory() {}
+
+  public static ElevatorFactory getInstance() {
+    if (factory == null)
+      factory = new LGElevatorFactory();
+
+    return factory;
+  }
+
   @Override
   public Motor createMotor() {
     return new LGMotor();

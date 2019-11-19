@@ -442,7 +442,313 @@
 
 <br>
 
-### *새로운*
+### *새로운 제조 업체의 부품을 지원하는 경우*
 
-새로운 제조 업체의 부품을 지원하는 경우 이저에는 삼성 부품의 객체를 생성하도록 부품별 Factory 클래스를 수정해줘야 했지만, 
+새로운 제조 업체의 부품을 지원하는 경우 이전에는 삼성 부품의 객체를 생성하도록 **부품별 Factory 클래스를 수정해줘야 했지만,** 그러나 이제는 부품이 아니라 제조 업체별로 Factory 클래스를 설계했으므로 삼성 **부품의 객체를 생성하는 SamsungFactory 클래스만** 새롭게 만들면 된다.
 
+<br>
+
+### *SamsungFactory 클래스 이용한 삼성 부품의 객체 생성*
+
+<img src="../../capture/스크린샷 2019-11-19 오후 10.21.13.png" width=500>
+
+<br>
+
+### *코드*
+
+* **SamsungElevatorFactory**
+
+  ```java
+  public class SamsungElevatorFactory extends ElevatorFactory {
+  
+    @Override
+    public Motor createMotor() {
+      return new SamsungMotor();
+    }
+  
+    @Override
+    public Door createDoor() {
+      return new SamsungDoor();
+    }
+  
+  }
+  ```
+
+* **SamsungDoor**
+
+  ```java
+  public class SamsungDoor extends Door {
+  
+    @Override
+    protected void doClose() {
+      System.out.println("close Samsung Door");
+    }
+  
+    @Override
+    protected void doOpen() {
+      System.out.println("open Samsung Door");
+    }
+  
+  }
+  ```
+
+* **SamsungMotor**
+
+  ```java
+  public class SamsungMotor extends Motor {
+  
+    @Override
+    protected void moveMotor(Direction direction) {
+      System.out.println("move Samsung Motor");
+    }
+  
+  }
+  ```
+
+* **Client**
+
+  ```java
+  public class Client {
+  
+    public static void main(String[] args) {
+      ElevatorFactory factory = new SamsungElevatorFactory();
+  
+      Door door = factory.createDoor();
+      Motor motor = factory.createMotor();
+      motor.setDoor(door);
+  
+      door.open();
+      motor.move(Direction.UP);
+    }
+  
+  }
+  ```
+
+* **실행 결과**
+
+  ```
+  open Samsung Door
+  close Samsung Door
+  move Samsung Motor
+  ```
+
+이와 같이 새로운 제조 업체의 부품을 지원하려면 해당 제조 업체의 부품을 생성하는 Factory 클래스를 추가하면 된다. **기존의 코드는 변경하지 않고도 새로운 제조 업체의 객체를 지원할 수 있다.**
+
+<br>
+
+즉, 구체적인 Factory 클래스(LGElevatorFactory, SamsungElevatorFactory, HyundaiElevatorFactory)를 생성하는 팩토리 메서드를 사용함으로써 **제조 업체별 Factory 객체를 생성하는 방식을 캡슐화할 수 있다.**
+
+<br>
+
+LGElevatorFactory, HyundaiElevatorFactory, SamsungElevatorFactory 객체는 각각 1개만 있으면 된다. 그래서 Factory 클래스는 **싱글턴 패턴으로 설계할 필요가 있다.**
+
+<br>
+
+### *팩토리 메서드와 싱글턴 패턴을 적용한 제조 업체별 Factory 클래스 다이어그램*
+
+<img src="../../capture/스크린샷 2019-11-19 오후 10.57.57.png">
+
+<br>
+
+### *코드*
+
+* **ElevatorFactoryFactory**
+
+  ```java
+  // 팩토리 클래스에 팩토리 메서드 패턴을 적용
+  public class ElevatorFactoryFactory {
+  
+    public static ElevatorFactory getFactory(VendorID vendorID) {
+      ElevatorFactory factory = null;
+      switch (vendorID) {
+        case LG:
+          factory = LGElevatorFactory.getInstance();
+          break;
+        case HYUNDAI:
+          factory = HyundaiElevatorFactory.getInstance();
+          break;
+        case SAMSUNG:
+          factory = SamsungElevatorFactory.getInstance();
+          break;
+      }
+      return factory;
+    }
+  
+  }
+  ```
+
+  * **getFactory 메서드를 ** 통해 제조 업체별 Factory 객체를 생성하는 코드가 캡슐화되었다.
+
+* **LGElevatorFactory**
+
+  ```java
+  public class LGElevatorFactory extends ElevatorFactory {
+  
+    private static ElevatorFactory factory;
+    private LGElevatorFactory() {}
+  
+    public static ElevatorFactory getInstance() {
+      if (factory == null)
+        factory = new LGElevatorFactory();
+  
+      return factory;
+    }
+  
+    @Override
+    public Motor createMotor() {
+      return new LGMotor();
+    }
+  
+    @Override
+    public Door createDoor() {
+      return new LGDoor();
+    }
+  
+  }
+  ```
+
+* **Client**
+
+  ```java
+  public class Client {
+  
+    public static void main(String[] args) {
+      String vendorName = args[0];
+      VendorID vendorID;
+  
+      if (vendorName.equalsIgnoreCase("Samsung"))
+        vendorID = VendorID.SAMSUNG;
+      else if (vendorName.equalsIgnoreCase("LG"))
+        vendorID = VendorID.LG;
+      else
+        vendorID = VendorID.HYUNDAI;
+  
+      ElevatorFactory factory = ElevatorFactoryFactory.getFactory(vendorID);
+  
+      Door door = factory.createDoor();
+      Motor motor = factory.createMotor();
+      motor.setDoor(door);
+  
+      door.open();
+      motor.move(Direction.UP);
+    }
+  
+  }
+  ```
+
+  * vendorID에 주어지는 인자에 따라 제조 업체별 Factory 객체를 생성하는 방식을 캡슐화했다.
+
+<br>
+
+## 13.4. 추상 팩토리 패턴
+
+**추상 팩토리 패턴(Abstract Factory Pattern)은** 관련성 있는 여러 종류의 객체를 일관된 방식으로 생성하는 경우에 유용하다. 즉, 엘리베이터에 부품별로 Factory를 정의하는 대신 관련 객체들을 **일관성 있게 생성 할 수 있도록 Factory 클래스를 정의하는 것이 효과적이다.** 
+
+<br>
+
+### *추상 팩토리 패턴의 컬레보레이션*
+
+<img src="../../capture/스크린샷 2019-11-19 오후 11.49.20.png">
+
+* **AbstractFactory** : 실제 팩토리 클래스의 공통 인터페이스. 각 제품의 부품을 생성하는 기능을 추상 메서드로 정의한다.
+
+  * **예시)** ElevatorFactory
+
+    ```java
+    public abstract class ElevatorFactory {
+    
+      public abstract Motor createMotor();
+      public abstract Door createDoor();
+    
+    }
+    ```
+
+* **ConcreteFactory** : 구체적인 팩토리 클래스로 AbstractFactory 클래스의 추상 메서드를 오버라이드함으로써 구체적인 제품을 생성한다.
+
+  * **예시)** LGElevatorFactory
+
+    ```java
+    public class LGElevatorFactory extends ElevatorFactory {
+    
+      private static ElevatorFactory factory;
+      private LGElevatorFactory() {}
+    
+      public static ElevatorFactory getInstance() {
+        if (factory == null)
+          factory = new LGElevatorFactory();
+    
+        return factory;
+      }
+    
+      @Override
+      public Motor createMotor() {
+        return new LGMotor();
+      }
+    
+      @Override
+      public Door createDoor() {
+        return new LGDoor();
+      }
+    
+    }
+    ```
+
+* **AbstractProduct** : 제품의 공통 인터페이스
+
+  * **예시)** Door
+
+    ```java
+    public abstract class Door {
+    
+      private DoorStatus doorStatus;
+    
+      public Door() {
+        doorStatus = DoorStatus.CLOSED;
+      }
+    
+      public DoorStatus getDoorStatus() {
+        return doorStatus;
+      }
+    
+      public void close() {
+        if (doorStatus == DoorStatus.CLOSED)
+          return;
+    
+        doClose();
+        doorStatus = DoorStatus.CLOSED;
+      }
+    
+      protected abstract void doClose();
+    
+      public void open() {
+        if (doorStatus == DoorStatus.OPENED)
+          return;
+    
+        doOpen();
+        doorStatus = DoorStatus.OPENED;
+      }
+    
+      protected abstract void doOpen();
+    
+    }
+    ```
+
+* **ConcreteProduct** : 구체적인 팩토리 클래스에서 생성되는 구체적인 제품
+
+  * **예시)** LGDoor
+
+    ```java
+    public class LGDoor extends Door{
+    
+      @Override
+      protected void doClose() {
+        System.out.println("close LG Door");
+      }
+    
+      @Override
+      protected void doOpen() {
+        System.out.println("open LG Door");
+      }
+    
+    }
+    ```
