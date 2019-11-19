@@ -18,5 +18,5 @@
 10. [데커레이터 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/decorator_pattern)
 11. [템플릿 메서드 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/template_method_pattern)
 12. [팩토리 메서드 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/factory_method_pattern)
-13. 추상 팩토리 패턴
+13. [추상 팩토리 패턴](https://github.com/LeeSM0518/design-pattern/tree/master/src/abstract_factory_pattern)
 14. 컴피지트 패턴
