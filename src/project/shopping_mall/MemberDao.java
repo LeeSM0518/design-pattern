@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface MemberDao {
 
-  public boolean exist(Member member) throws SQLException;
+  public Member selectOne(Member member);
   public void insert(Member member);
-  public void update(Member member);
-  public void delete(Member member);
 
 }

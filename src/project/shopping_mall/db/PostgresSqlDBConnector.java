@@ -1,31 +1,25 @@
 package project.shopping_mall.db;
 
 import java.sql.*;
+import java.util.function.Consumer;
 
 public class PostgresSqlDBConnector implements DBConnector {
 
-  static {
-    try {
-      Class.forName("org.postgresql.Driver");
-    } catch (ClassNotFoundException e) {
-      e.printStackTrace();
-    }
-  }
+  private String dbURL = "jdbc:postgresql://arjuna.db.elephantsql.com/sblwxgwu";
+  private String user = "sblwxgwu";
+  private String password = "mlEWfCE0sZWwkTSxCSbf40LXsFOrIH3n";
 
-  String dbURL = "jdbc:postgressql://arjuna.db.elephantsql.com/sblwxgwu";
-  String user = "sblwxgwu";
-  String password = "mlEWfCE0sZWwkTSxCSbf40LXsFOrIH3n";
   private static PostgresSqlDBConnector connector = new PostgresSqlDBConnector();
-
   public static PostgresSqlDBConnector getInstance() {
     return connector;
   }
 
   @Override
-  public int insert(String query) {
+  public int insert(String query, Consumer<PreparedStatement> consumer) {
     try (Connection connection = DriverManager.getConnection(dbURL, user, password);
          PreparedStatement preparedStatement = connection.prepareStatement(query)) {
       connection.setAutoCommit(false);
+      consumer.accept(preparedStatement);
       int[] retValue = preparedStatement.executeBatch();
       connection.commit();
       return retValue.length;
@@ -36,10 +30,12 @@ public class PostgresSqlDBConnector implements DBConnector {
   }
 
   @Override
-  public ResultSet select(String query) {
+  public ResultSet select(String query, Consumer<PreparedStatement> consumer) {
     try (Connection connection = DriverManager.getConnection(dbURL, user, password);
          PreparedStatement preparedStatement = connection.prepareStatement(query);
-         ResultSet resultSet = preparedStatement.executeQuery();) {
+    ) {
+      consumer.accept(preparedStatement);
+      ResultSet resultSet = preparedStatement.executeQuery();
       return resultSet;
     } catch (SQLException e) {
       e.printStackTrace();
@@ -48,10 +44,11 @@ public class PostgresSqlDBConnector implements DBConnector {
   }
 
   @Override
-  public int update(String query) {
+  public int update(String query, Consumer<PreparedStatement> consumer) {
     try (Connection connection = DriverManager.getConnection(dbURL, user, password);
          PreparedStatement preparedStatement = connection.prepareStatement(query);) {
       connection.setAutoCommit(false);
+      consumer.accept(preparedStatement);
       int retValue = preparedStatement.executeUpdate();
       connection.commit();
       return retValue;
@@ -62,10 +59,11 @@ public class PostgresSqlDBConnector implements DBConnector {
   }
 
   @Override
-  public int delete(String query) {
+  public int delete(String query, Consumer<PreparedStatement> consumer) {
     try (Connection connection = DriverManager.getConnection(dbURL, user, password);
          PreparedStatement preparedStatement = connection.prepareStatement(query);) {
       connection.setAutoCommit(false);
+      consumer.accept(preparedStatement);
       int retValue = preparedStatement.executeUpdate();
       connection.commit();
       return retValue;

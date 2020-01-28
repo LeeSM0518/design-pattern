@@ -9,6 +9,21 @@ public class Member {
   private String phoneNumber;
   private String address;
 
+  public Member(){}
+
+  public Member(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
+
+  public Member(String name, String username, String password, String phoneNumber, String address) {
+    this.name = name;
+    this.username = username;
+    this.password = password;
+    this.phoneNumber = phoneNumber;
+    this.address = address;
+  }
+
   public int getId() {
     return id;
   }
@@ -56,4 +71,5 @@ public class Member {
   public void setAddress(String address) {
     this.address = address;
   }
+
 }
