@@ -1,4 +1,4 @@
-package project.shopping_mall;
+package project.shoppingmall;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,13 +15,11 @@ public class PostgresSqlMemberDao implements MemberDao {
 
   @Override
   public Member selectOne(Member member) {
-    String username = member.getUsername();
-    String password = member.getPassword();
     conn.select("select * from MEMBER where username=? and password=?",
         preparedStatement -> {
           try {
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
+            preparedStatement.setString(1, member.getUsername());
+            preparedStatement.setString(2, member.getPassword());
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
               member.setName(rs.getString("name"));

@@ -1,7 +1,4 @@
-package project.shopping_mall;
-
-import java.sql.SQLException;
-import java.util.List;
+package project.shoppingmall;
 
 public interface MemberDao {
 

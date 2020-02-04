@@ -1,4 +1,4 @@
-package project.shopping_mall;
+package project.shoppingmall;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

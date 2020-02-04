@@ -218,7 +218,7 @@ public class Atom extends Robot {
     }
   
     public void move() {
-      movingStrategy.movie();
+      movingStrategy.move();
     }
     
     public void attack() {
@@ -255,14 +255,14 @@ public class Atom extends Robot {
   
   public interface MovingStrategy {
   
-    public void movie();
+    public void move();
   
   }
   
   public class FlyingStrategy implements MovingStrategy {
   
     @Override
-    public void movie() {
+    public void move() {
       System.out.println("I can fly");
     }
   

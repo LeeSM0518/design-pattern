@@ -1,8 +1,7 @@
-package project.shopping_mall;
+package project.shoppingmall;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
 import java.util.function.Consumer;
 
 public interface DBConnector {
