@@ -50,10 +50,10 @@ public class Client {
 
   private void myInfo() {
     printLine();
-    System.out.print("이름 >> " + accessMember.getName());
-    System.out.print("아이디 >> " + accessMember.getUsername());
-    System.out.print("전화번호 >> " + accessMember.getPhoneNumber());
-    System.out.print("주소 >> " + accessMember.getAddress());
+    System.out.println("이름 >> " + accessMember.getName());
+    System.out.println("아이디 >> " + accessMember.getUsername());
+    System.out.println("전화번호 >> " + accessMember.getPhoneNumber());
+    System.out.println("주소 >> " + accessMember.getAddress());
     printLine();
   }
 

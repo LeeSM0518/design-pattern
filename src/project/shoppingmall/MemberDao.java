@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface MemberDao {
 
-  public Member selectOne(Member member);
-  public void insert(Member member);
+  Member selectOne(Member member);
+  void insert(Member member);
 
 }

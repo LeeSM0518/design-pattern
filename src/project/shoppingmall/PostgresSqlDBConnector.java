@@ -1,4 +1,4 @@
-package project.shopping_mall.db;
+package project.shopping_mall;
 
 import java.sql.*;
 import java.util.function.Consumer;
@@ -9,6 +9,7 @@ public class PostgresSqlDBConnector implements DBConnector {
   private String user = "sblwxgwu";
   private String password = "mlEWfCE0sZWwkTSxCSbf40LXsFOrIH3n";
 
+  private PostgresSqlDBConnector(){}
   private static PostgresSqlDBConnector connector = new PostgresSqlDBConnector();
   public static PostgresSqlDBConnector getInstance() {
     return connector;
@@ -35,8 +36,7 @@ public class PostgresSqlDBConnector implements DBConnector {
          PreparedStatement preparedStatement = connection.prepareStatement(query);
     ) {
       consumer.accept(preparedStatement);
-      ResultSet resultSet = preparedStatement.executeQuery();
-      return resultSet;
+      return preparedStatement.executeQuery();
     } catch (SQLException e) {
       e.printStackTrace();
     }
