@@ -1,4 +1,6 @@
-package project.shoppingmall;
+package project.shoppingmall.dao.member;
+
+import project.shoppingmall.dto.Member;
 
 public class MySqlMemberDao implements MemberDao {
   @Override
@@ -7,7 +9,7 @@ public class MySqlMemberDao implements MemberDao {
   }
 
   @Override
-  public void insert(Member member) {
-
+  public int insert(Member member) {
+    return 0;
   }
 }

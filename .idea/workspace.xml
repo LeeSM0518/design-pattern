@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31cb4dba-024a-46c2-a83c-ca66f115daad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/design/design1.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/design/design1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/DBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dto/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MySqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/MySqlDBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MySqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/MySqlMemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/PostgresSqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/PostgresSqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,9 +79,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="package.json" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -107,19 +116,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
-    <configuration name="Client (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="factory_method_pattern.Client" />
-      <module name="design-pattern" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="factory_method_pattern.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="observer_pattern.Client" />
       <module name="design-pattern" />
@@ -173,6 +169,19 @@
       </method>
     </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.shoppingmall.Client" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.shoppingmall.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="abstract_factory_pattern.unused_pattern.Client" />
       <module name="design-pattern" />
       <extension name="coverage">
@@ -203,7 +212,6 @@
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Client (5)" />
         <item itemvalue="Application.Client (3)" />
-        <item itemvalue="Application.Client (4)" />
         <item itemvalue="Application.Client (4)" />
       </list>
     </recent_temporary>
@@ -273,7 +281,12 @@
       <workItem from="1580131979541" duration="1451000" />
       <workItem from="1580182018568" duration="13024000" />
       <workItem from="1580453740240" duration="37000" />
-      <workItem from="1580815246328" duration="3655000" />
+      <workItem from="1580815246328" duration="3934000" />
+      <workItem from="1580828452622" duration="64000" />
+      <workItem from="1580882823749" duration="685000" />
+      <workItem from="1580956401931" duration="137000" />
+      <workItem from="1581242272494" duration="3701000" />
+      <workItem from="1581428891340" duration="4796000" />
     </task>
     <servers />
   </component>
@@ -298,35 +311,39 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="880" y="398" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580222753372" />
-    <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser" timestamp="1580819066069">
+    <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser" timestamp="1581430252251">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580819066069" />
-    <state x="1300" y="373" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1580274332022" />
+    <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581430252251" />
+    <state x="1300" y="373" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1581250064125" />
+    <state x="476" y="629" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581428898635">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="476" y="629" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581428898635" />
     <state x="249" y="334" key="CommitChangelistDialog2" timestamp="1580194142222">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="249" y="334" key="CommitChangelistDialog2/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580194142222" />
-    <state width="1280" height="387" key="GridCell.Tab.0.bottom" timestamp="1580819143134">
+    <state width="1280" height="312" key="GridCell.Tab.0.bottom" timestamp="1581254140255">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="1280" height="387" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580819143134" />
-    <state width="1920" height="313" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1580281566939" />
-    <state width="1280" height="387" key="GridCell.Tab.0.center" timestamp="1580819143133">
+    <state width="1280" height="312" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="960" height="312" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
+    <state width="1280" height="312" key="GridCell.Tab.0.center" timestamp="1581254140255">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="1280" height="387" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580819143133" />
-    <state width="1920" height="313" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1580281566939" />
-    <state width="1280" height="387" key="GridCell.Tab.0.left" timestamp="1580819143133">
+    <state width="1280" height="312" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="960" height="312" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
+    <state width="1280" height="312" key="GridCell.Tab.0.left" timestamp="1581254140254">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="1280" height="387" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580819143133" />
-    <state width="1920" height="313" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1580281566938" />
-    <state width="1280" height="387" key="GridCell.Tab.0.right" timestamp="1580819143134">
+    <state width="1280" height="312" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140254" />
+    <state width="960" height="312" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558297" />
+    <state width="1280" height="312" key="GridCell.Tab.0.right" timestamp="1581254140255">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="1280" height="387" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580819143134" />
-    <state width="1920" height="313" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1580281566939" />
+    <state width="1280" height="312" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="960" height="312" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
     <state x="255" y="162" key="SettingsEditor" timestamp="1580279629225">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
@@ -340,9 +357,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="337" y="217" key="new project wizard/0.23.1920.1177@0.23.1920.1177" timestamp="1580453773619" />
-    <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1580817130509">
+    <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1581429102705">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580817130509" />
+    <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581429102705" />
+    <state x="1189" y="293" width="670" height="562" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1581249632757" />
   </component>
 </project>

@@ -37,13 +37,13 @@
 
 ### ER 모델
 
-<img src="../../../captre/스크린샷 2020-01-28 오후 12.36.53.png" width=500>
+![image](https://user-images.githubusercontent.com/43431081/74100102-64ed9900-4b6e-11ea-98be-dc7fe342edde.png)
 
 <br>
 
 ### ER 다이어그램
 
-<img src="../../../capture/스크린샷 2020-01-28 오후 12.43.49.png">
+![image](https://user-images.githubusercontent.com/43431081/74100104-68812000-4b6e-11ea-9d8c-93c7da9e2ec6.png)
 
 <br>
 
@@ -51,15 +51,15 @@
 
 * **DTO class**
 
-  <img src="../../../capture/스크린샷 2020-01-28 오후 9.45.25.png">
+  ![image](https://user-images.githubusercontent.com/43431081/74100114-7fc00d80-4b6e-11ea-8b58-e77bf59b910d.png)
 
 * **DB Connector class**
 
-  <img src="../../../capture/스크린샷 2020-01-28 오후 9.48.02.png" width=500>
+  <img src="https://user-images.githubusercontent.com/43431081/74100115-8189d100-4b6e-11ea-9f3d-8ee30fdc02f5.png" alt="image" style="zoom:50%;" />
 
 * **DataAccessObject & Service class**
 
-  <img src="../../../capture/스크린샷 2020-01-28 오후 9.49.31.png">
+  ![image](https://user-images.githubusercontent.com/43431081/74100116-83539480-4b6e-11ea-86d8-3e1dcd17b05b.png)
 
 <br>
 

@@ -1,4 +1,4 @@
-package project.shoppingmall;
+package project.shoppingmall.dto;
 
 public class Member {
 

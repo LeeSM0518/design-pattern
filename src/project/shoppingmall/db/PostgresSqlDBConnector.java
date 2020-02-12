@@ -1,4 +1,4 @@
-package project.shoppingmall;
+package project.shoppingmall.db;
 
 import java.sql.*;
 import java.util.function.Consumer;

@@ -1,5 +1,9 @@
 package project.shoppingmall;
 
+import project.shoppingmall.dao.member.MemberDao;
+import project.shoppingmall.dao.member.PostgresSqlMemberDao;
+import project.shoppingmall.dto.Member;
+
 import java.util.Scanner;
 
 public class Client {
@@ -77,6 +81,7 @@ public class Client {
     System.out.println("1. 내정보 보기");
     System.out.println("2. 로그아웃");
     printLine();
+    System.out.print(">>>> ");
   }
 
   public Member getAccessMember() {

@@ -1,4 +1,8 @@
-package project.shoppingmall;
+package project.shoppingmall.dao.member;
+
+import project.shoppingmall.dto.Member;
+import project.shoppingmall.db.DBConnector;
+import project.shoppingmall.db.PostgresSqlDBConnector;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,8 +38,8 @@ public class PostgresSqlMemberDao implements MemberDao {
   }
 
   @Override
-  public void insert(Member member) {
-    conn.insert("insert into MEMBER values" +
+  public int insert(Member member) {
+    return conn.insert("insert into MEMBER values" +
         "(DEFAULT, ?, ?, ?, ?, ?)", preparedStatement -> {
       try {
         preparedStatement.setString(1, member.getName());
