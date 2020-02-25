@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31cb4dba-024a-46c2-a83c-ca66f115daad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/design/design1.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/design/design1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/observer_pattern/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer_pattern/Observer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/DBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dto/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/MemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MySqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/MySqlDBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/MySqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/MySqlMemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/PostgresSqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/PostgresSqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/basket/PostgresSqlBasketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/basket/PostgresSqlBasketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/PostgresSqlOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/PostgresSqlOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/PostgresSqlProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/PostgresSqlProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,10 +79,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="package.json" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -108,14 +108,27 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Client (1)">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.shoppingmall.Client" />
+      <module name="design-pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.shoppingmall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="observer_pattern.Client" />
       <module name="design-pattern" />
@@ -209,6 +222,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Client (5)" />
         <item itemvalue="Application.Client (3)" />
@@ -286,7 +300,9 @@
       <workItem from="1580882823749" duration="685000" />
       <workItem from="1580956401931" duration="137000" />
       <workItem from="1581242272494" duration="3701000" />
-      <workItem from="1581428891340" duration="4796000" />
+      <workItem from="1581428891340" duration="7052000" />
+      <workItem from="1582033504661" duration="15245000" />
+      <workItem from="1582562265623" duration="12283000" />
     </task>
     <servers />
   </component>
@@ -311,43 +327,59 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="880" y="398" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580222753372" />
-    <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser" timestamp="1581430252251">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="1732" y="428" key="#com.intellij.ide.util.MemberChooser" timestamp="1582632671247">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="-543" y="540" key="#com.intellij.ide.util.MemberChooser/-1680.228.1680.1050/0.0.2560.1440@-1680.228.1680.1050" timestamp="1582083503352" />
+    <state x="1732" y="428" key="#com.intellij.ide.util.MemberChooser/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582632671247" />
     <state x="1733" y="444" key="#com.intellij.ide.util.MemberChooser/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581430252251" />
+    <state x="1299" y="357" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1582085273687" />
     <state x="1300" y="373" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1581250064125" />
     <state x="476" y="629" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581428898635">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="476" y="629" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581428898635" />
+    <state x="1066" y="609" width="429" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582634553204">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1066" y="609" width="429" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582634553204" />
     <state x="249" y="334" key="CommitChangelistDialog2" timestamp="1580194142222">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="249" y="334" key="CommitChangelistDialog2/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580194142222" />
-    <state width="1280" height="312" key="GridCell.Tab.0.bottom" timestamp="1581254140255">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2560" height="323" key="GridCell.Tab.0.bottom" timestamp="1582640798228">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state width="2560" height="323" key="GridCell.Tab.0.bottom/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798228" />
+    <state width="2560" height="323" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328280" />
     <state width="1280" height="312" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
     <state width="960" height="312" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
-    <state width="1280" height="312" key="GridCell.Tab.0.center" timestamp="1581254140255">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2560" height="323" key="GridCell.Tab.0.center" timestamp="1582640798227">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state width="2560" height="323" key="GridCell.Tab.0.center/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798227" />
+    <state width="2560" height="323" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328279" />
     <state width="1280" height="312" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
     <state width="960" height="312" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
-    <state width="1280" height="312" key="GridCell.Tab.0.left" timestamp="1581254140254">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2560" height="323" key="GridCell.Tab.0.left" timestamp="1582640798226">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state width="2560" height="323" key="GridCell.Tab.0.left/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798226" />
+    <state width="2560" height="323" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328278" />
     <state width="1280" height="312" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140254" />
     <state width="960" height="312" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558297" />
-    <state width="1280" height="312" key="GridCell.Tab.0.right" timestamp="1581254140255">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="2560" height="323" key="GridCell.Tab.0.right" timestamp="1582640798228">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state width="2560" height="323" key="GridCell.Tab.0.right/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798228" />
+    <state width="2560" height="323" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328279" />
     <state width="1280" height="312" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
     <state width="960" height="312" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
-    <state x="255" y="162" key="SettingsEditor" timestamp="1580279629225">
-      <screen x="0" y="23" width="1920" height="1177" />
+    <state x="255" y="142" key="SettingsEditor" timestamp="1582085795016">
+      <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="1408" y="314" key="SettingsEditor/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580217744660" />
+    <state x="255" y="142" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1582085795016" />
     <state x="255" y="162" key="SettingsEditor/0.23.1920.1177@0.23.1920.1177" timestamp="1580279629225" />
     <state x="100" y="123" width="1720" height="977" key="dock-window-1" timestamp="1580281162734">
       <screen x="0" y="23" width="1920" height="1177" />
@@ -357,10 +389,21 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="337" y="217" key="new project wizard/0.23.1920.1177@0.23.1920.1177" timestamp="1580453773619" />
-    <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1581429102705">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state x="988" y="346" key="refactoring.ChangeSignatureDialog" timestamp="1582633178488">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="988" y="346" key="refactoring.ChangeSignatureDialog/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633178488" />
+    <state x="945" y="345" key="run.anything.popup" timestamp="1582638293109">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="945" y="345" key="run.anything.popup/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582638293109" />
+    <state x="1585" y="331" width="1021" height="688" key="search.everywhere.popup" timestamp="1582562403256">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="-640" y="469" width="670" height="501" key="search.everywhere.popup/-1680.228.1680.1050/0.0.2560.1440@-1680.228.1680.1050" timestamp="1582048785749" />
+    <state x="1585" y="331" width="1021" height="688" key="search.everywhere.popup/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582562403256" />
     <state x="1585" y="348" width="670" height="676" key="search.everywhere.popup/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581429102705" />
+    <state x="1040" y="241" width="670" height="501" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581482912729" />
     <state x="1189" y="293" width="670" height="562" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1581249632757" />
   </component>
 </project>
