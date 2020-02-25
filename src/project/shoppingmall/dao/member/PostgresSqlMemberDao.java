@@ -9,12 +9,10 @@ import java.sql.SQLException;
 
 public class PostgresSqlMemberDao implements MemberDao {
 
-  DBConnector conn = PostgresSqlDBConnector.getInstance();
-  private static PostgresSqlMemberDao memberDao = new PostgresSqlMemberDao();
+  DBConnector conn;
 
-  private PostgresSqlMemberDao(){}
-  public static PostgresSqlMemberDao getInstance() {
-    return memberDao;
+  public PostgresSqlMemberDao(DBConnector dbConnector){
+    conn = dbConnector;
   }
 
   @Override
@@ -26,6 +24,7 @@ public class PostgresSqlMemberDao implements MemberDao {
             preparedStatement.setString(2, member.getPassword());
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
+              member.setId(rs.getInt("member_id"));
               member.setName(rs.getString("name"));
               member.setPhoneNumber(rs.getString("phone_number"));
               member.setAddress(rs.getString("address"));

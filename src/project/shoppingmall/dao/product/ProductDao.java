@@ -7,6 +7,6 @@ import java.util.List;
 public interface ProductDao {
 
   List<Product> selectList();
-  int updateToReduceStock(List<Product> products);
+  void update(List<Product> products);
 
 }

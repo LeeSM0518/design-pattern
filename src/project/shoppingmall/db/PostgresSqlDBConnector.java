@@ -9,12 +9,6 @@ public class PostgresSqlDBConnector implements DBConnector {
   private String user = "sblwxgwu";
   private String password = "mlEWfCE0sZWwkTSxCSbf40LXsFOrIH3n";
 
-  private PostgresSqlDBConnector(){}
-  private static PostgresSqlDBConnector connector = new PostgresSqlDBConnector();
-  public static PostgresSqlDBConnector getInstance() {
-    return connector;
-  }
-
   @Override
   public int insert(String query, Consumer<PreparedStatement> consumer) {
     try (Connection connection = DriverManager.getConnection(dbURL, user, password);

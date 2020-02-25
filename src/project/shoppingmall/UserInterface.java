@@ -23,7 +23,7 @@ public class UserInterface {
     System.out.println("=============================");
   }
 
-  public void logIn(Map<String, Object> map) {
+  public void logIn(final Map<String, Object> map) {
     borderPrint(sc -> {
       System.out.print("아이디 >> ");
       String username = scanner.nextLine();
@@ -34,7 +34,7 @@ public class UserInterface {
     });
   }
 
-  public void join(Map<String, Object> map) {
+  public void join(final Map<String, Object> map) {
     borderPrint(sc -> {
       System.out.print("이름 >> ");
       String name = scanner.nextLine();
@@ -54,7 +54,7 @@ public class UserInterface {
     });
   }
 
-  public void myInfo(Map<String, Object> map) {
+  public void myInfo(final Map<String, Object> map) {
     Member accessMember = (Member) map.get("accessMember");
     borderPrint(sc -> {
       System.out.println("이름 >> " + accessMember.getName());
@@ -71,8 +71,8 @@ public class UserInterface {
       System.out.println("1. 로그인");
       System.out.println("2. 회원가입");
       System.out.println("3. 종료");
-      System.out.print(">>>> ");
     });
+    System.out.print(">>>> ");
     return scanner.nextLine();
   }
 
@@ -84,30 +84,84 @@ public class UserInterface {
       System.out.println("3. 쇼핑");
       System.out.println("4. 장바구니");
       System.out.println("5. 주문 확인");
-      System.out.print(">>>> ");
     });
+    System.out.print(">>>> ");
     return scanner.nextLine();
   }
 
-  public String printShoppingMenu(Map<String, Object> map) {
+  public String printShoppingMenu(final Map<String, Object> map) {
     List<Product> products = (List<Product>) map.get("products");
     borderPrint(sc -> {
       System.out.println("상품 리스트");
       border();
-      products.forEach(product -> {
-        System.out.println("상품 번호: " + product.getId());
-        System.out.println("상품 이름: " + product.getName());
-        System.out.println("상품 가격: " + product.getPrice());
-        System.out.println("상품 재고: " + product.getStock());
-        System.out.println("-----------------------------");
-        border();
-        System.out.println("메뉴를 입력해주세요.");
-        System.out.println("1. 상품 담기");
-        System.out.println("2. 이전으로");
-        border();
-        System.out.print(">>>> ");
-      });
+      printProductList(products);
+      border();
+      System.out.println("메뉴를 입력해주세요.");
+      System.out.println("1. 상품 담기");
+      System.out.println("2. 이전으로");
+      border();
     });
+    System.out.print(">>>> ");
+    return scanner.nextLine();
+  }
+
+  public String addProduct() {
+    borderPrint(sc -> {
+      System.out.println("상품 번호를 입력해주세요.");
+    });
+    System.out.print(">>>> ");
+    return scanner.nextLine();
+  }
+
+  public String printBasketMenu(Map<String, Object> map) {
+    List<Product> products = (List<Product>) map.get("productList");
+    printBasketList(products);
+    borderPrint(sc -> {
+      System.out.println("메뉴를 입력해주세요.");
+      System.out.println("1. 전체 구매하기");
+      System.out.println("2. 상품 취소하기");
+      System.out.println("3. 이전으로");
+    });
+    System.out.print(">>>> ");
+    return scanner.nextLine();
+  }
+
+  public void printBasketList(final List<Product> products) {
+    borderPrint(sc -> {
+      System.out.println("장바구니 리스트");
+      border();
+      printProductList(products);
+    });
+  }
+
+  public void printProductList(final List<Product> products) {
+    products.forEach(product -> {
+      System.out.println("상품 번호: " + product.getId());
+      System.out.println("상품 이름: " + product.getName());
+      System.out.println("상품 가격: " + product.getPrice());
+      System.out.println("상품 재고: " + product.getStock());
+      System.out.println("-----------------------------");
+    });
+  }
+
+  public String printPaymentMenu() {
+    borderPrint(sc -> {
+      System.out.println("결제 API 연결 완료");
+      border();
+      System.out.println("결제하실 방법을 선택해주세요.");
+      System.out.println("1. Samsung Pay");
+      System.out.println("2. 휴대폰 결제");
+      System.out.println("3. 이전으로");
+    });
+    System.out.print(">>>> ");
+    return scanner.nextLine();
+  }
+
+  public String printCancelProduct() {
+    borderPrint(sc -> {
+      System.out.println("취소할 상품 번호를 입력해주세요.");
+    });
+    System.out.print(">>>> ");
     return scanner.nextLine();
   }
 

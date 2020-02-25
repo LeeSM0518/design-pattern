@@ -1,7 +1,6 @@
 package project.shoppingmall.dao.product;
 
 import project.shoppingmall.db.DBConnector;
-import project.shoppingmall.db.PostgresSqlDBConnector;
 import project.shoppingmall.dto.Product;
 
 import java.sql.ResultSet;
@@ -11,14 +10,10 @@ import java.util.List;
 
 public class PostgresSqlProductDao implements ProductDao {
 
-  DBConnector connector = PostgresSqlDBConnector.getInstance();
-  private static PostgresSqlProductDao productDao = new PostgresSqlProductDao();
+  DBConnector connector;
 
-  private PostgresSqlProductDao() {
-  }
-
-  public static PostgresSqlProductDao getInstance() {
-    return productDao;
+  public PostgresSqlProductDao(DBConnector dbConnector) {
+    connector = dbConnector;
   }
 
   @Override
@@ -43,20 +38,24 @@ public class PostgresSqlProductDao implements ProductDao {
     return products;
   }
 
-  @Override
-  public int updateToReduceStock(List<Product> products) {
-    return connector.update("update PRODUCT set stock = stock - 1 where product_id = ?",
+  private void updateToReduceStock(Product product) {
+    connector.update("update PRODUCT set stock = stock - 1 where product_id = "
+            + product.getId(),
         preparedStatement -> {
-          for (Product product : products) {
-            try {
-              preparedStatement.setInt(1, product.getId());
-              preparedStatement.addBatch();
-              preparedStatement.clearParameters();
-            } catch (SQLException e) {
-              e.printStackTrace();
-            }
+          try {
+            preparedStatement.addBatch();
+            preparedStatement.clearParameters();
+          } catch (SQLException e) {
+            e.printStackTrace();
           }
         });
+  }
+
+  @Override
+  public void update(List<Product> products) {
+    for (Product product : products) {
+      updateToReduceStock(product);
+    }
   }
 
 }

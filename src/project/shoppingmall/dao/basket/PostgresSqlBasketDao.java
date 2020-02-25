@@ -13,14 +13,10 @@ import java.util.List;
 
 public class PostgresSqlBasketDao implements BasketDao {
 
-  DBConnector connector = PostgresSqlDBConnector.getInstance();
-  private static PostgresSqlBasketDao basketDao = new PostgresSqlBasketDao();
+  DBConnector connector;
 
-  private PostgresSqlBasketDao() {
-  }
-
-  public static PostgresSqlBasketDao getInstance() {
-    return basketDao;
+  public PostgresSqlBasketDao(DBConnector dbConnector) {
+    connector = dbConnector;
   }
 
   @Override
@@ -66,11 +62,11 @@ public class PostgresSqlBasketDao implements BasketDao {
 
   @Override
   public int deleteOne(Basket basket) {
-    return connector.delete("delete from BASKET where member_id = ? and " +
-        "product_id = ?", preparedStatement -> {
+    int memberId = basket.getMember().getId();
+    int productId = basket.getProduct().getId();
+    return connector.delete("delete from BASKET where member_id="+ memberId +
+        " and product_id=" + productId, preparedStatement -> {
       try {
-        preparedStatement.setInt(1, basket.getMember().getId());
-        preparedStatement.setInt(2, basket.getProduct().getId());
         preparedStatement.addBatch();
         preparedStatement.clearParameters();
       } catch (SQLException e) {
@@ -81,7 +77,16 @@ public class PostgresSqlBasketDao implements BasketDao {
 
   @Override
   public int deleteAll(Basket basket) {
-    return 0;
+    int id = basket.getMember().getId();
+    return connector.delete("delete from BASKET where member_id=" + id,
+        preparedStatement -> {
+      try {
+        preparedStatement.addBatch();
+        preparedStatement.clearParameters();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    });
   }
 
 }
