@@ -44,12 +44,6 @@ public class Client extends Subject {
 
   private void join() {
     ui.join(map);
-    Member member = new Member(
-        (String) map.get("name"),
-        (String) map.get("username"),
-        (String) map.get("password"),
-        (String) map.get("phoneNumber"),
-        (String) map.get("address"));
     memberService.signUp(map);
   }
 
@@ -112,6 +106,7 @@ public class Client extends Subject {
       switch (menu) {
         case "1":
           payAllProduct(Payment.SAMSUNG);
+          return;
         case "2":
           payAllProduct(Payment.CELLPHONE);
           return;

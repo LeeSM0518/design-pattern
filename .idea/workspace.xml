@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31cb4dba-024a-46c2-a83c-ca66f115daad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer_pattern/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer_pattern/Observer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/basket/PostgresSqlBasketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/basket/PostgresSqlBasketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/member/PostgresSqlMemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/PostgresSqlOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/order/PostgresSqlOrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/PostgresSqlProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/PostgresSqlProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/dao/product/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/shoppingmall/db/PostgresSqlDBConnector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +293,9 @@
       <workItem from="1581242272494" duration="3701000" />
       <workItem from="1581428891340" duration="7052000" />
       <workItem from="1582033504661" duration="15245000" />
-      <workItem from="1582562265623" duration="12283000" />
+      <workItem from="1582562265623" duration="12652000" />
+      <workItem from="1582690171780" duration="2367000" />
+      <workItem from="1582702451263" duration="5000" />
     </task>
     <servers />
   </component>
@@ -347,33 +340,37 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="249" y="334" key="CommitChangelistDialog2/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1580194142222" />
-    <state width="2560" height="323" key="GridCell.Tab.0.bottom" timestamp="1582640798228">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="1024" height="361" key="GridCell.Tab.0.bottom" timestamp="1582693800170">
+      <screen x="0" y="0" width="1024" height="768" />
     </state>
-    <state width="2560" height="323" key="GridCell.Tab.0.bottom/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798228" />
+    <state width="2560" height="323" key="GridCell.Tab.0.bottom/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582641871320" />
     <state width="2560" height="323" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328280" />
     <state width="1280" height="312" key="GridCell.Tab.0.bottom/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="1024" height="361" key="GridCell.Tab.0.bottom/0.0.1024.768@0.0.1024.768" timestamp="1582693800170" />
     <state width="960" height="312" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
-    <state width="2560" height="323" key="GridCell.Tab.0.center" timestamp="1582640798227">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="1024" height="361" key="GridCell.Tab.0.center" timestamp="1582693800169">
+      <screen x="0" y="0" width="1024" height="768" />
     </state>
-    <state width="2560" height="323" key="GridCell.Tab.0.center/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798227" />
+    <state width="2560" height="323" key="GridCell.Tab.0.center/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582641871319" />
     <state width="2560" height="323" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328279" />
     <state width="1280" height="312" key="GridCell.Tab.0.center/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="1024" height="361" key="GridCell.Tab.0.center/0.0.1024.768@0.0.1024.768" timestamp="1582693800169" />
     <state width="960" height="312" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
-    <state width="2560" height="323" key="GridCell.Tab.0.left" timestamp="1582640798226">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="1024" height="361" key="GridCell.Tab.0.left" timestamp="1582693800168">
+      <screen x="0" y="0" width="1024" height="768" />
     </state>
-    <state width="2560" height="323" key="GridCell.Tab.0.left/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798226" />
+    <state width="2560" height="323" key="GridCell.Tab.0.left/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582641871319" />
     <state width="2560" height="323" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328278" />
     <state width="1280" height="312" key="GridCell.Tab.0.left/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140254" />
+    <state width="1024" height="361" key="GridCell.Tab.0.left/0.0.1024.768@0.0.1024.768" timestamp="1582693800168" />
     <state width="960" height="312" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558297" />
-    <state width="2560" height="323" key="GridCell.Tab.0.right" timestamp="1582640798228">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="1024" height="361" key="GridCell.Tab.0.right" timestamp="1582693800169">
+      <screen x="0" y="0" width="1024" height="768" />
     </state>
-    <state width="2560" height="323" key="GridCell.Tab.0.right/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582640798228" />
+    <state width="2560" height="323" key="GridCell.Tab.0.right/-1680.228.1680.1050/0.0.2560.1440@0.0.2560.1440" timestamp="1582641871320" />
     <state width="2560" height="323" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.0.2560.1440@0.0.2560.1440" timestamp="1582633328279" />
     <state width="1280" height="312" key="GridCell.Tab.0.right/-1680.251.1680.1027/0.23.2560.1417@0.23.2560.1417" timestamp="1581254140255" />
+    <state width="1024" height="361" key="GridCell.Tab.0.right/0.0.1024.768@0.0.1024.768" timestamp="1582693800169" />
     <state width="960" height="312" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1581243558298" />
     <state x="255" y="142" key="SettingsEditor" timestamp="1582085795016">
       <screen x="0" y="0" width="1920" height="1200" />
